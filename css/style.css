@@ -1,0 +1,111 @@
+* {
+    font-family: Helvetica;
+} 
+
+.header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.header__title {    
+    display: inline-block;
+    text-transform: uppercase;
+    padding-bottom: 1em;
+    font-size: 1.3em;
+}
+
+header > div:nth-child(1) {
+    position: relative;
+}
+
+header > div:nth-child(1):after {
+    content: '';
+    display: block;
+    height: 0.15em;
+    width: 6em;
+    background: black;
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+}
+
+.header__logo-img {
+    width: 25px;
+    height: 25px;
+}
+
+.header__discription { 
+    line-height: 1.5em;
+}
+
+.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.user {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 1.5em; 
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.user__name {
+    padding: 1em;
+}
+
+.user__edu-name {
+    color: #9797af;
+}
+
+.user__img {
+    border-radius: 2em;
+    width: 75px;
+    height: 75px;
+}
+
+.user:hover:after {
+    content: "";
+    position: absolute;
+    padding: 5.5em;
+    -webkit-box-shadow: 0.2em 0.8em 0.5em  rgba(122,122,122,0.5);
+            box-shadow: 0.2em 0.8em 0.5em  rgba(122,122,122,0.5);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 375px) {
+    .header__logo-img, .user:hover:after {
+        display: none;
+    }
+
+    .user {
+        flex-direction: row;
+    }
+
+    .user__edu-name {
+        padding: 0 1em;
+    }
+}
