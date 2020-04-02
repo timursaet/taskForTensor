@@ -4,82 +4,120 @@
 		<meta charset="utf-8">
         <title>Tensor School</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
+        <script src="js/app.js" defer></script>
     </head>
 	<body>
-		<header class="header">
-            <div>
-                <img src="img/logo.png" class="header__logo-img" alt="Здесь логотип"/>
-                <div class="header__title">Tensor School</div>
-            </div>
-            <div class="header__discription">
-                <div>Это страница школы Тензор в городе Уфа. Тут вы можете</div>
-                <div>познакомиться с нашими учениками и посмотреть темы занятий.</div>
+		<header>
+            <div class="card">
+                <div>
+                    <img src="img/logo.png" class="card__logo-img" alt="Логотип Tensor"/>
+                    <p class="card__title" title="Tensor School">Tensor School</p>
+                </div>
+                <span class="card__discription" title="Это страница школы Тензор в городе Уфа. Тут вы можете познакомиться с нашими учениками и посмотреть темы занятий.">
+                    <p>Это страница школы Тензор в городе Уфа. Тут вы можете</p>
+                    <p>познакомиться с нашими учениками и посмотреть темы занятий.</p>
+                </span>
             </div>
 		</header>
         <div class="container">
-
-            <div class="user">
-                <img src="img/ava1.png" class="user__img" alt="Ава пользователя"/>
+            <div class="user__showModal">
                 <div>
-                    <div class="user__name">Маша Иванова</div>
-                    <div class="user__edu-name">УГАТУ 2 курс</div>
+                    <span>
+                        <p class="user__showModal_bday">
+                            <span>Была в сети в </span>
+                            <img src="img/exit.jpg" class="user__showModal_exit">    
+                        </p>
+                    </span>
+                    <img src="img/ava1.png" class="user__showModal_img" alt="Ава Маша Иванова"/>
+                    <p class="user__showModal__name" name='name'></p>  
+                    <p><span class="user__showModal_bday">День рождение:</span> 
+                        <span class="user__showModal_data"></span></p>
+                    <span class="user__showModal_phone">Телефон:</span>
+                        <span class="user__showModal_data"></span>
+                    <div>
+                        <img src="img/sendMessage.jpg" class="user__showModal_sendMessage" alt="Отправить сообщение"/>
+                    </div> 
+                </div>
+              </div>
+            <div class="user" data-name="Маша Иванова" data-phone="+7-937-535-15-48"
+                data-photo="img/ava1.png" data-bdday="2 мая, 10 лет" 
+                data-online='00:38'>
+                <img src="img/ava1.png" class="user__img" alt="Ава Маша Иванова"/>
+                <div>
+                    <p class="user__name" title="Маша Иванова">Маша Иванова</p>
+                    <span class="user__edu-name" title="УГАТУ 2 курс">УГАТУ 2 курс</span>
                 </div>
             </div>
 
-            <div class="user">
-                <img src="img/ava2.png" class="user__img" alt="Ава пользователя"/>
+            <div class="user" data-name="Егор Егоров" data-phone="+7-937-465-15-48"
+                    data-photo="img/ava2.png" data-bdday="1 мая, 25 лет" 
+                    data-online='16:38'>
+                <img src="img/ava2.png" class="user__img" alt="Ава Егора Егорова"/>
                 <div>
-                    <div class="user__name">Маша Иванова</div>
-                    <div class="user__edu-name">УГАТУ 2 курс</div>
+                    <p class="user__name" title="Егор Егоров">Егор Егоров</p>
+                    <span class="user__edu-name" title="УГАТУ 2 курс">УГАТУ 2 курс</span>
                 </div>
             </div>
 
-            <div class="user">
-                <img src="img/ava3.png" class="user__img" alt="Ава пользователя"/>
+            <div class="user" data-name="Миша Петров" data-phone="+7-937-465-52-00"
+                data-photo="img/ava3.png" data-bdday="31 декабря, 60 лет" 
+                data-online='01:59'>
+                <img src="img/ava3.png" class="user__img" alt="Ава Мишы Петрова"/>
                 <div>
-                    <div class="user__name">Миша Петров</div>
-                    <div class="user__edu-name">СурГУ 3 курс</div>
+                    <p class="user__name" title="Миша Петров">Миша Петров</p>
+                    <span class="user__edu-name" title="СурГУ 3 курс">СурГУ 3 курс</span>
                 </div>
             </div>
 
-            <div class="user">
-                <img src="img/ava3.png" class="user__img" alt="Ава пользователя"/>
+            <div class="user" data-name="Марат Сидоров" data-phone="8-800-311-61-31"
+                data-photo="img/ava3.png" data-bdday="31 декабря, 60 лет" 
+                data-online='01:59'>
+                <img src="img/ava3.png" class="user__img" alt="Ава Марата Сидорова"/>
                 <div>
-                    <div class="user__name">Марат Сидоров</div>
-                    <div class="user__edu-name">БГУ 4 курс</div>
+                    <p class="user__name" title="Марат Сидоров">Марат Сидоров</p>
+                    <span class="user__edu-name" title="БГУ 4 курс">БГУ 4 курс</span>
                 </div>
             </div>
 
-            <div class="user">
-                <img src="img/ava2.png" class="user__img" alt="Ава пользователя"/>
+            <div class="user" data-name="Людмила Иванов" data-phone="8-800-300-60-30"
+                data-photo="img/ava2.png" data-bdday="31 декабря, 60 лет" 
+                data-online='13:00'>
+                <img src="img/ava2.png" class="user__img" alt="Ава Людмилы Ивановы"/>
                 <div>
-                    <div class="user__name">Маша Иванова</div>
-                    <div class="user__edu-name">УГАТУ 2 курс</div>
+                    <p class="user__name" title="Людмила Иванова">Людмила Иванова</p>
+                    <span class="user__edu-name" title="УГАТУ 2 курс">УГАТУ 2 курс</span>
                 </div>
             </div>
 
-            <div class="user">
-                <img src="img/ava1.png" class="user__img" alt="Ава пользователя"/>
+            <div class="user" data-name="Марат Гайсин" data-phone="8-800-311-56-35"
+                data-photo="img/ava1.png" data-bdday="31 декабря, 60 лет" 
+                data-online='14:30'>
+                <img src="img/ava1.png" class="user__img" alt="Ава Марата Гайсина"/>
                 <div>
-                    <div class="user__name">Маша Иванова</div>
-                    <div class="user__edu-name">УГАТУ 2 курс</div>
+                    <p class="user__name" title="Марат Гайсин">Марат Гайсин</p>
+                    <span class="user__edu-name" title="УГАТУ 2 курс">УГАТУ 2 курс</span>
                 </div>
             </div>
 
-            <div class="user">
-                <img src="img/ava1.png" class="user__img" alt="Ава пользователя"/>
+            <div class="user" data-name="Георгий Савченко" data-phone="8-900-30-45-62"
+                data-photo="img/ava1.png" data-bdday="1 декабря, 20 лет" 
+                data-online='17:30'>
+                <img src="img/ava1.png" class="user__img" alt="Ава Георгия Савченко"/>
                 <div>
-                    <div class="user__name">Маша Иванова</div>
-                    <div class="user__edu-name">УГАТУ 2 курс</div>
+                    <p class="user__name" title="Георгий Савченко">Георгий Савченко</p>
+                    <span class="user__edu-name" title="УГАТУ 2 курс">УГАТУ 2 курс</span>
                 </div>
             </div>
 
-            <div class="user">
-                <img src="img/ava1.png" class="user__img" alt="Ава пользователя"/>
+            <div class="user" data-name="Екатерина Савельева" data-phone="8-900-30-45-62"
+                data-photo="img/ava1.png" data-bdday="3 декабря, 25 лет" 
+                data-online='17:21'>
+                <img src="img/ava1.png" class="user__img" alt="Ава Екатерины Савельевы"/>
                 <div>
-                    <div class="user__name">Маша Иванова</div>
-                    <div class="user__edu-name">УГАТУ 2 курс</div>
+                    <p class="user__name" title="Екатерина Савельева">Екатерина Савельева</p>
+                    <span class="user__edu-name" title="УГАТУ 2 курс">УГАТУ 2 курс</span>
                 </div>
             </div>
             
