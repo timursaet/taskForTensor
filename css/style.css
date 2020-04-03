@@ -82,10 +82,8 @@ body {
     border: 2px solid black;
     background: white;
     display: none;
-    height: 135px;
     position: fixed;
-    grid-template-columns: 220px 80px;
-    grid-template-rows: 25px 25px 25px 25px 25px;
+    grid-template-columns: 1fr 80px;
     box-shadow: 0.2em 0.8em 0.5em  rgba(122,122,122,0.5);
     grid-template-areas: 
         "main exit"
