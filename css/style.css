@@ -8,13 +8,8 @@ body {
 
 .card {
     text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
 }
 
 .card__title {    
@@ -34,9 +29,7 @@ body {
     position: absolute;
     left: 50%;
     bottom: 5px;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 .card__logo-img {
@@ -49,31 +42,16 @@ body {
 }
 
 .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .user {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
     margin: 1.5em; 
     text-align: center;
     position: relative;
@@ -97,69 +75,86 @@ body {
     content: "";
     position: absolute;
     padding: 5.5em;
-    -webkit-box-shadow: 0.2em 0.8em 0.5em  rgba(122,122,122,0.5);
+    box-shadow: 0.2em 0.8em 0.5em  rgba(122,122,122,0.5);
     cursor: pointer;
 }
 
-.user__showModal {
-    width: 15em;
-    height:9em;
+.showModal {
+    border: 2px solid black;
     display: none;
-    border: 1px solid black;
-    background: white;
-    text-align: justify;
-    padding: 0.5em;
+    height: 135px;
+    grid-template-columns: 220px 80px;
+    grid-template-rows: 25px 25px 25px 25px 25px;
+    box-shadow: 0.2em 0.8em 0.5em  rgba(122,122,122,0.5);
+    grid-template-areas: 
+        "main exit"
+        "name img"
+        "bday img"
+        "phone img"
+        "other img";
 }
 
-.user__showModal__name {
-    font-size: 1em;
-    padding-bottom: 0.3em;
-    font-weight: bold;
-}
-
-.user__showModal_bday {
+.showModal__main {
+    grid-area: main;
     color: #9797af;
-    font-size: 0.7em; 
-    padding-bottom: 0.5em;
+    font-size: 0.7em;
+    padding: 2px;
 }
 
-.user__showModal_data {
-    font-size: 10px; 
-    padding-bottom: 4px;
+.showModal__exit {
+    grid-area: exit;
+    justify-self: end;
+    padding: 2px;
+}
+
+.showModal__exit:hover {
+    cursor: pointer;
+ }
+
+.showModal__name {
+    grid-area: name;
     font-weight: bold;
+    padding-left: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.user__showModal_phone {
+.showModal__bday {
+    grid-area: bday;
     color: #9797af;
-    font-size: 10px; 
+    font-size: 0.7em;
+    padding: 2px;
 }
 
-.user__showModal_img {
-    float: right;
-    width: 65px;
-    height: 65px;
+.showModal__phone {
+    grid-area: phone;
+    color: #9797af;
+    font-size: 0.7em;
+    padding: 2px;
 }
 
-.user__showModal_sendMessage {
-    padding-top: 10px;
-    width: 35px;
+.showModal__img {
+    grid-area: img;
+}
+
+.showModal__other {
+    grid-area: other;
+    padding: 2px;   
+}
+
+.showModal__other_img {
+    width: 30px;
     height: 25px;
 }
-.user__showModal_onlain {
-    color: #9797af;
-    font-size: 10px; 
-    padding-bottom: 4px;
-    float: left;
-}
 
-.user__showModal_exit {
-    float: right;
-    width: 15px; 
-    height: 15px;
-}
-
-.user__showModal_exit:hover {
+.showModal__other_img {
     cursor: pointer;
+}
+
+.showModal_data {
+    font-size: 12px;
+    color: black;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 375px) {
@@ -168,10 +163,7 @@ body {
     }
 
     .user {
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-                flex-direction: row;
+        flex-direction: row;
     }
 
     .user__edu-name {

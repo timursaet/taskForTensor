@@ -1,19 +1,20 @@
 const users = document.querySelectorAll('.container .user');
-const showModal = document.querySelectorAll('.container .user__showModal')[0];
-const close = document.querySelectorAll('.container .user__showModal .user__showModal_exit')[0];
+const showModal = document.querySelectorAll('.container .showModal')[0];
+const close = document.querySelectorAll('.container .showModal .showModal__exit')[0];
+const element = showModal.querySelectorAll("div, div>img, div>span"); 
 
 users.forEach((user) => {
    user.addEventListener('click', () => {
     const { name, phone, photo, bdday, online} = event.currentTarget.dataset;
-        showModal.children[0].children[0].children[0].children[0].innerHTML += online;
-        showModal.children[0].children[2].innerHTML = name;
-        showModal.children[0].children[3].children[1].innerHTML += bdday;    
-        showModal.children[0].children[1].src = photo;
-        showModal.children[0].children[5].innerHTML += phone;
-        showModal.style.display = "block";
+        element[0].innerHTML += online;
+        element[3].innerHTML = name;
+        element[5].innerHTML += bdday;
+        element[7].innerHTML += phone;
+        element[9].src = photo;
+        showModal.style.display = "grid";
    });
 });
 
-close.addEventListener('click', function () {
-    showModal.style.display = 'none';
+close.addEventListener('click', () => {
+     showModal.style.display = 'none';
 });
