@@ -54,7 +54,6 @@ body {
     align-items: center;
     margin: 1.5em; 
     text-align: center;
-    position: relative;
 }
 
 .user__name {
@@ -81,8 +80,10 @@ body {
 
 .showModal {
     border: 2px solid black;
+    background: white;
     display: none;
     height: 135px;
+    position: fixed;
     grid-template-columns: 220px 80px;
     grid-template-rows: 25px 25px 25px 25px 25px;
     box-shadow: 0.2em 0.8em 0.5em  rgba(122,122,122,0.5);
