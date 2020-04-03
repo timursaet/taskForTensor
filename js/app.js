@@ -4,7 +4,8 @@ const close = document.querySelectorAll('.container .showModal .showModal__exit'
 const element = showModal.querySelectorAll("div, div>img, div>span"); 
 
 users.forEach((user) => {
-   user.addEventListener('click', () => {
+   user.addEventListener('click', (event) => {
+    event.stopPropagation();
     const { name, phone, photo, bdday, online} = event.currentTarget.dataset;
         element[0].innerHTML += online;
         element[3].innerHTML = name;
@@ -15,6 +16,10 @@ users.forEach((user) => {
    });
 });
 
+document.addEventListener('click', () => {
+    showModal.style.display = "none";
+});
+
 close.addEventListener('click', () => {
-     showModal.style.display = 'none';
+     showModal.style.display = "none";
 });
