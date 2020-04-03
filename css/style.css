@@ -95,6 +95,7 @@ body {
 
 .showModal__main {
     grid-area: main;
+    justify-self: start;
     color: #9797af;
     font-size: 0.7em;
     padding: 2px;
@@ -112,6 +113,7 @@ body {
 
 .showModal__name {
     grid-area: name;
+    justify-self: start;
     font-weight: bold;
     padding-left: 2px;
     overflow: hidden;
@@ -128,6 +130,7 @@ body {
 .showModal__phone {
     grid-area: phone;
     color: #9797af;
+    justify-self: start;
     font-size: 0.7em;
     padding: 2px;
 }
@@ -138,6 +141,7 @@ body {
 
 .showModal__other {
     grid-area: other;
+    justify-self: start;
     padding: 2px;   
 }
 
