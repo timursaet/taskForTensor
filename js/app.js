@@ -1,36 +1,28 @@
-const users = document.querySelectorAll('.container .user');
-const showModal = document.querySelectorAll('.container .showModal')[0];
-const close = document.querySelectorAll('.container .showModal .showModal__exit')[0];
-const element = showModal.querySelectorAll("div, div>img, div>span"); 
+const container = document.querySelector('.container');
 
-let countFriend = 0;
+class Student {
+    constructor(user) {
+        this.id = user.id;
+        this.name = user.name;
+        //this.dateOfBirth = user.dateOfBirth;
+        this.education = user.education;
+        this.course = user.course;
+        //this.phone = user.phone;
+        this.photoSrc = user.photoSrc;
+    }
+    render(block) {
+        let view = `<div class="user" data-id="${this.id}">
+                        <img src="${this.photoSrc}" class="user__img" alt="Ава ${this.name}"/>
+                        <div>
+                            <p class="user__name" title="${this.name}">${this.name}</p>
+                            <span class="user__edu-name" title="${this.education} ${this.course} курс">${this.education} ${this.course} курс</span>
+                        </div>
+                    </div>`;
+            block.innerHTML += view;
+    }
+}
 
-users.forEach((user) => {
-    countFriend++;
-    user.addEventListener('click', (event) => {
-        event.stopPropagation();
-        const { name, phone, photo, bdday, online } = event.currentTarget.dataset;
-            element[1].innerHTML = online;
-            element[4].innerHTML = name;
-            element[6].innerHTML = bdday;
-            element[8].innerHTML = phone;
-            element[10].src = photo;
-            element[13].innerHTML = `${countFriend} друзей`;
-            event.currentTarget.appendChild(showModal);
-            showModal.style.display = "grid";
-   });
-});
-
-document.addEventListener('click', () => {
-    showModal.style.display = "none";
-    document.removeEventListener('click',() => {
-        console.log('Обработчик удален!')
-    });
-});
-
-close.addEventListener('click', () => {
-     showModal.style.display = "none";
-     document.removeEventListener('click',() => {
-        console.log('Обработчик удален!')
-    });
+users.forEach((item) => {
+    let student = new Student(item);
+    student.render(container);
 });
