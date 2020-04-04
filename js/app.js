@@ -4,10 +4,8 @@ class Student {
     constructor(user) {
         this.id = user.id;
         this.name = user.name;
-        //this.dateOfBirth = user.dateOfBirth;
         this.education = user.education;
         this.course = user.course;
-        //this.phone = user.phone;
         this.photoSrc = user.photoSrc;
     }
     render(block) {

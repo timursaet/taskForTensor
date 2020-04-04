@@ -2,6 +2,7 @@ const users = [
     {
         id: 1,
         name: 'Маша Иванова',
+        online: '23:52',
         dateOfBirth: '22.09.1997',
         education: 'БГУ',
         course: '4',
@@ -11,6 +12,7 @@ const users = [
     {
         id: 2,
         name: 'Миша Петров',
+        online: '22:00',
         dateOfBirth: '01.10.2001',
         education: 'УГАТУ',
         course: '3',

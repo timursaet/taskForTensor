@@ -81,7 +81,7 @@ body {
 .showModal {
     border: 2px solid black;
     background: white;
-    display: none;
+    display: grid;
     position: fixed;
     grid-template-columns: 1fr 80px;
     box-shadow: 0.2em 0.8em 0.5em  rgba(122,122,122,0.5);
