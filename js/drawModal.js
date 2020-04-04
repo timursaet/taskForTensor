@@ -1,3 +1,4 @@
+"use strict";
 const users_container = document.querySelectorAll('.container .user');
 
 function render(block) {
