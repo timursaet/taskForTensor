@@ -1,5 +1,4 @@
-"use strict";
-const users_container = document.querySelectorAll('.container .user');
+const users_container = document.querySelectorAll('.container .user'); 
 
 function render(block) {
         let showModal = `<div class="showModal__main">
@@ -24,7 +23,7 @@ function render(block) {
                         <div class="showModal__other">
                             <img src="img/sendMessage.jpg" class="showModal__other_img"  title="Отправить сообщение" 
                             alt="Отправить сообщение"/>
-                            <span class="showModal_data"></span>
+                            <span class="showModal_data">${countFriends} друзей</span>
                         </div>`;
         block.innerHTML = showModal;
 };
@@ -43,7 +42,7 @@ users_container.forEach((item) => {
         }, 1000);
         event.currentTarget.appendChild(showModal);
     }
-    item.onmouseout = function(event) {
+    item.onmouseout = function() {
         showModal.style.display = "none";
     }
 });
